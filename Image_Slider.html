@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dream Destinations</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-font-smoothing: antialiased;
+      }
+      .container {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        padding: 2rem;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        background-color: white;
+        font-family: Tahoma, sans-serif;
+      }
+      .main-img img {
+        height: 50%;
+        width: 100vw;
+        padding-bottom: 10px;
+      }
+      .slider-wrapper {
+        position: relative;
+        max-width: 48rem;
+        margin: 0 auto;
+      }
+      .slider {
+        --slide-width: clamp(320px, 75vw, 800px);
+        --slide-height: clamp(240px, 75vh, 600px);
+        display: grid;
+        grid-auto-flow: column;
+        scroll-snap-type: x mandatory;
+        max-width: var(--slide-width);
+        border: 5px solid antiquewhite;
+        aspect-ratio: 22/15;
+        box-shadow: 0 2px 15px rgba(#000, 0.2), 0 2px 20px rgba(#000, 0.25);
+        overflow-y: hidden;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        border-radius: 0.5rem;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+          display: none;
+        }
+      }
+      .slide {
+        scroll-snap-align: start;
+        background-size: cover;
+        background-position: center;
+        width: var(--slide-width);
+        height: var(--slide-height);
+        background-repeat: no-repeat;
+      }
+      .slider-nav {
+        position: absolute;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 15px;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        a {
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          background-color: #fff;
+          opacity: 0.75;
+          transition: opacity ease 250ms;
+          cursor: pointer;
+
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+
+      .caption {
+        display: block;
+        margin-top: 25px;
+        color: #999;
+        letter-spacing: 0.5px;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <img
+        class="main-img"
+        src="/home/daffo/Downloads/dream-destination-cute-modern-calligraphy-travel-vector-43297574.jpg"
+      />
+      <div class="slider-wrapper">
+        <div class="slider">
+          <div
+            id="slide-1"
+            class="slide"
+            style="
+              background-image: url(https://www.usnews.com/object/image/00000187-a04d-d0df-a5bf-bbed0cac0000/new-intro-northern-lights-stock.jpg?update-time=1682350073420&size=responsive970);
+            "
+            alt="Aurora Borealis"
+          ></div>
+
+          <div
+            id="slide-2"
+            class="slide"
+            style="
+              background-image: url(https://www.worldatlas.com/r/w960-q80/upload/05/71/c2/shutterstock-713084413.jpg);
+            "
+            alt="Sahara Desert"
+          ></div>
+
+          <div
+            src="slide-3"
+            class="slide"
+            style="
+              background-image: url(https://i.pinimg.com/originals/d3/45/11/d3451114ab4e1d55ead624930bcff60c.jpg);
+            "
+            alt="Mountains"
+          ></div>
+        </div>
+        <div class="slider-nav">
+          <a href="#slide-1"></a>
+          <a href="#slide-2"></a>
+          <a href="#slide-3"></a>
+        </div>
+      </div>
+
+      <small class="caption">Use the arrow keys or dots to navigate</small>
+    </section>
+  </body>
+</html>
